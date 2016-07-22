@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.exam.andex01.widgetmenu">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Project_Beer_start">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".Project_Beer_asia">
+
+
+        </activity>
+        <activity android:name=".Project_Beer_europe">
+
+
+        </activity>
+        <activity android:name=".Project_Beer_america">
+
+
+        </activity>
+
+        <activity android:name=".NumberGameV01">
+
+
+        </activity>
+
+        <activity android:name=".AlertDialog05">
+
+
+        </activity>
+        <activity android:name=".AlertDialog04">
+
+
+        </activity>
+
+        <activity android:name=".AlertDialog03">
+
+
+        </activity>
+        <activity android:name=".AlertDialog02">
+
+
+        </activity>
+        <activity android:name=".BaseBallGameV01">
+
+
+        </activity>
+
+        <activity android:name=".AlertDialog01">
+
+
+        </activity>
+        <activity android:name=".SawonRevenueActivity">
+
+        </activity>
+        <activity android:name=".SawonProductActivity">
+
+        </activity>
+        <activity android:name=".SawonCustomerActivity">
+
+        </activity>
+        <activity android:name=".SawonCertify">
+
+
+        </activity>
+        <activity android:name=".SawonLogin">
+
+
+        </activity>
+
+
+        <activity android:name=".CalcResult">
+
+
+        </activity>
+
+        <activity android:name=".CalcActivity">
+
+        </activity>
+        <activity android:name=".ResultActivity02">
+
+
+        </activity>
+
+        <activity android:name=".ResultActivity01">
+
+
+        </activity>
+
+        <activity android:name=".GuessGameV01">
+
+
+        </activity>
+
+        <activity android:name=".PopupMenu01">
+
+
+        </activity>
+
+        <activity android:name=".ContextMenu01">
+
+
+        </activity>
+        <activity android:name=".OptionMenu03">
+
+
+        </activity>
+
+        <activity android:name=".OptionMenu02">
+
+        </activity>
+        <activity android:name=".OptionMenu01">
+
+
+        </activity>
+
+        <activity android:name=".PaintEx04">
+
+
+        </activity>
+        <activity android:name=".OutLineV01Activity">
+<!--            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+
+        <activity android:name=".Inflater03SungjukGraphic"></activity>
+        <activity android:name=".InflaterEx01">
+
+
+        </activity>
+        <activity android:name=".InflaterEx00">
+
+
+        </activity>
+
+        <activity android:name=".PaintEx03">
+
+
+        </activity>
+
+        <activity android:name=".PaintEx02">
+
+
+        </activity>
+        <activity android:name=".PaintEx01V">
+
+
+        </activity>
+
+
+        <activity android:name=".TouchListener02">
+
+
+        </activity>
+        <activity android:name=".TouchListener01">
+
+
+        </activity>
+
+        <activity android:name=".RatingBar03Exam01">
+
+
+        </activity>
+        <activity android:name=".RatingBar02">
+
+
+        </activity>
+        <activity android:name=".RatingBar01">
+
+
+        </activity>
+
+        <activity android:name=".CheckBox03Exam02">
+
+
+        </activity>
+        <activity android:name=".RadioBtn02">
+
+        </activity>
+        <activity android:name=".RadioBtn01">
+
+        </activity>
+
+        <activity android:name=".CheackBox02">
+
+
+        </activity>
+        <activity android:name=".CheackBox01">
+
+        </activity>
+
+        <activity android:name=".Lotto_version2">
+
+
+        </activity>
+        <activity android:name=".OnClickEvent4">
+
+
+        </activity>
+        <activity android:name=".LayoutByCode02">
+
+        </activity>
+
+        <activity android:name=".LayoutByCode01">
+
+
+        </activity>
+
+        <activity android:name=".Lotto_version1">
+
+        </activity>
+        <activity android:name=".MemLog">
+
+        </activity>
+        <activity android:name=".MemIns">
+
+        </activity>
+        <activity android:name=".MemDel">
+
+        </activity>
+
+        <activity android:name=".MemHom">
+
+        </activity>
+        <activity android:name=".MemBottom"></activity>
+        <activity android:name=".MemUpd">
+
+        </activity>
+
+
+        <activity android:name=".MemTop">
+
+
+        </activity>
+
+        <activity android:name=".WidgetActivity">
+
+        </activity>
+        <activity
+            android:name=".Weight_chk01"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+
+        <activity android:name=".GaWiBaWiBoV01"></activity>
+
+        <activity android:name=".TarotV01"></activity>
+
+        <activity android:name=".ImageViewEx02"></activity>
+
+        <activity android:name=".Calculator01"></activity>
+
+        <activity android:name=".GuGuDan01">
+            <!--            <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>-->
+        </activity>
+    </application>
+
+</manifest>

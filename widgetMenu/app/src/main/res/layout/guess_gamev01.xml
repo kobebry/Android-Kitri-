@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#b7d4c3">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5.5">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="45dp"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:background="#bad6c5"
+            android:src="@drawable/back"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="숫자맞추기"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_margin="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="숫자를 입력하세요"
+                android:textColor="#ffffff"/>
+            <EditText
+                android:id="@+id/guess"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:layout_weight="9"
+                android:maxLength="2"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5">
+
+        <TextView
+            android:layout_margin="12dp"
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_weight="9"
+            android:gravity="center"
+            android:text="숫자 맞추기"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="2.5"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingLeft="9dp"
+            android:gravity="left">
+
+            <Button
+                android:id="@+id/one"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:text="1"
+                android:textColor="#ffffff"
+                android:background="#979797"
+                android:textSize="25dp"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/two"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:text="2"
+                android:textColor="#ffffff"
+                android:background="#979797"
+                android:textSize="25dp"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/three"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:text="3"
+                android:textColor="#ffffff"
+                android:background="#979797"
+                android:textSize="25dp"
+                android:layout_margin="5dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingLeft="9dp"
+            android:gravity="left">
+
+            e<Button
+                android:id="@+id/four"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:text="4"
+                android:textColor="#ffffff"
+                android:background="#979797"
+                android:textSize="25dp"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/five"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:text="5"
+                android:textColor="#ffffff"
+                android:background="#979797"
+                android:textSize="25dp"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/six"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:text="6"
+                android:textColor="#ffffff"
+                android:background="#979797"
+                android:textSize="25dp"
+                android:layout_margin="5dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingLeft="9dp"
+            android:gravity="left">
+
+            <Button
+                android:id="@+id/seven"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:text="7"
+                android:textColor="#ffffff"
+                android:background="#979797"
+                android:textSize="25dp"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/eight"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:text="8"
+                android:textColor="#ffffff"
+                android:background="#979797"
+                android:textSize="25dp"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/nine"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:text="9"
+                android:textColor="#ffffff"
+                android:background="#979797"
+                android:textSize="25dp"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/reset"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:text="다시"
+                android:textColor="#ffffff"
+                android:background="#979797"
+                android:textSize="25dp"
+                android:layout_margin="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="10dp">
+
+            <Button
+                android:id="@+id/zero"
+                android:layout_width="170dp"
+                android:layout_height="60dp"
+                android:background="#979797"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="10dp"/>
+            <Button
+                android:id="@+id/del"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:background="#979797"
+                android:text="←"
+                android:textSize="25dp"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="10dp"/>
+
+            <Button
+                android:id="@+id/enter"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:background="#979797"
+                android:text="계산"
+                android:textSize="25dp"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="10dp"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/liner">
+
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#ed6d40"
+        android:textSize="22dp"
+        android:text="드래그하면 니모가 따라다님"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+
+
+    <ImageView
+        android:id="@+id/nimo"
+        android:onClick="nimo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/nimo"/>
+</LinearLayout>

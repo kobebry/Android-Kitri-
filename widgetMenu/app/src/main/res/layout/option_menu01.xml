@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5a5a5c"
+        android:gravity="right">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#539f81"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="옵션 메뉴 확인은"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#539f81"
+            android:gravity="center"
+            android:text="메뉴 버튼을 눌러주세요!"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#539f81"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="버전 2.3이상은 액션바의"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:paddingBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#539f81"
+            android:gravity="center"
+            android:text="  오버플로우(를) 영역합니다."
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

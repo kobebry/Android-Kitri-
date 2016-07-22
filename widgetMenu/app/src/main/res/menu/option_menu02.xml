@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="GuGuDan01"
+        android:id="@+id/gugudan"/>
+    <item
+        android:title="Calculator01"
+        android:id="@+id/cal"/>
+    <item
+        android:title="ImageViewEx02"
+        android:id="@+id/imgchn"/>
+    <item
+        android:title="TarotV01"
+        android:id="@+id/taro"/>
+    <item
+        android:title="Lotto"
+        android:id="@+id/lotto"/>
+
+
+</menu>

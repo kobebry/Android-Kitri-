@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1">
+
+    <TableRow>
+        <TextView android:text="Open..."
+            android:layout_marginLeft="14dp"/>
+        <TextView android:text="Ctrl+O"
+            android:layout_column="2"
+            android:gravity="right"
+            android:layout_marginRight="5dp"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView android:text="Save..."
+            android:layout_marginLeft="14dp"/>
+        <TextView android:text="Ctrl+s"
+            android:layout_column="2"
+            android:gravity="right"
+            android:layout_marginRight="5dp"/>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Save As..."
+            android:layout_marginLeft="14dp"/>
+        <TextView android:text="Ctrl+Shft+S"
+            android:layout_column="2"
+            android:gravity="right"
+            android:layout_marginRight="5dp"/>
+    </TableRow>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"/>
+
+    <TableRow>
+        <TextView android:text="X Import..."/>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="X Export..."/>
+    </TableRow>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"/>
+    <TableRow>
+        <TableRow>
+            <TextView android:text="Quit"
+                android:layout_marginLeft="14dp"/>
+        </TableRow>
+    </TableRow>
+</TableLayout>

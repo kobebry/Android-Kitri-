@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="506dp"
+        android:layout_height="297dp"
+        android:src="@drawable/guinness"
+        android:background="@drawable/bac"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OnClick"
+                android:textSize="30dp"
+                android:textColor="#1d0e06"/>
+
+            <TextView
+                android:id="@+id/clickview"
+                android:paddingTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="#1d0e06"/>
+
+            <Button
+                android:id="@+id/onclickbtn"
+                android:layout_marginTop="30dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Onclick"
+                android:onClick="onclick"
+                android:textSize="18dp"
+                android:textColor="#ffffff"
+                android:background="#1d0e06"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OnTouch"
+                android:textSize="30dp"
+                android:textColor="#1d0e06"/>
+
+            <TextView
+                android:id="@+id/touchview"
+                android:paddingTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="#1d0e06"/>
+
+            <Button
+                android:id="@+id/ontouchbtn"
+                android:layout_marginTop="30dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Ontouch"
+                android:onClick="ontouch"
+                android:textSize="18dp"
+                android:textColor="#ffffff"
+                android:background="#1d0e06"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
