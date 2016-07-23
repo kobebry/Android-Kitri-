@@ -1,6 +1,456 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background">
 
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Asia Beer"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/asahi"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:background="@drawable/asahi_jpn05"
+                android:scaleType="fitXY"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/flag_jpn"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textasahi"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Asahi"
+                        android:fontFamily="cursive"
+                        android:textSize="15dp"/>
+
+                    <RatingBar
+                        android:id="@+id/rating_guinness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:rating="4.5"
+                        android:numStars="5"
+                        android:stepSize="0.5"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/kirin"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:background="@drawable/kirin_jpn05"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/flag_jpn"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textkirin"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kirin Ichiban"
+                        android:fontFamily="cursive"
+                        android:textSize="12dp"/>
+
+                    <RatingBar
+                        android:id="@+id/rating_boddingtons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:rating="4.0"
+                        android:numStars="5"
+                        android:stepSize="0.5"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/kloud"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:background="@drawable/kloud_kor05"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/flag_kor"
+                    android:scaleType="fitXY"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textkloud"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kloud"
+                        android:fontFamily="cursive"
+                        android:textSize="15dp"/>
+
+                    <RatingBar
+                        android:id="@+id/rating_volfas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:rating="3.7"
+                        android:numStars="5"
+                        android:stepSize="0.5"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/sanmiguel"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:background="@drawable/sanmiguel_phl05"
+                android:scaleType="fitXY"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/flag_phi"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textsanmiguel"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="San Miguel"
+                        android:fontFamily="cursive"
+                        android:textSize="15dp"/>
+
+                    <RatingBar
+                        android:id="@+id/rating_stella"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:rating="4.8"
+                        android:numStars="5"
+                        android:stepSize="0.5"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/sapporo"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:background="@drawable/sapporo_jpn05"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/flag_jpn"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textsapporo"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sapporo"
+                        android:fontFamily="cursive"
+                        android:textSize="15dp"/>
+
+                    <RatingBar
+                        android:id="@+id/rating_kronenbourg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:rating="4.0"
+                        android:numStars="5"
+                        android:stepSize="0.5"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/thintao"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:background="@drawable/thintao_chi05"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/flag_chi"
+                    android:scaleType="fitXY"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textthintao"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tsintao"
+                        android:fontFamily="cursive"
+                        android:textSize="15dp"/>
+
+                    <RatingBar
+                        android:id="@+id/rating_pilsner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:rating="3.7"
+                        android:numStars="5"
+                        android:stepSize="0.5"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/tiger"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:background="@drawable/tiger_sing05"
+                android:scaleType="fitXY"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/flag_sing"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/texttiger"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tiger"
+                        android:fontFamily="cursive"
+                        android:textSize="15dp"/>
+
+                    <RatingBar
+                        android:id="@+id/rating_heineken"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:rating="4.8"
+                        android:numStars="5"
+                        android:stepSize="0.5"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/victoria"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:background="@drawable/victoria_aus05"
+                android:scaleType="fitXY"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/flag_aus"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textvictoria"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Victoria Bitter"
+                        android:fontFamily="cursive"
+                        android:textSize="11dp"/>
+
+                    <RatingBar
+                        android:id="@+id/rating_hoegaarden"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:rating="4.0"
+                        android:numStars="5"
+                        android:stepSize="0.5"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

@@ -8,7 +8,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Project_Beer_europe_Stella"/>
+        <activity android:name=".Project_Beer_europe_Pilsner"/>
+        <activity android:name=".Project_Beer_europe_kronenbourg"/>
+        <activity android:name=".Project_Beer_europe_Krombacher"/>
+        <activity android:name=".Project_Beer_europe_Hoagarden"/>
+        <activity android:name=".Project_Beer_europe_Heineken"/>
+        <activity android:name=".Project_Beer_europe_Wolfas"/>
+        <activity android:name=".Project_Beer_europe_Bodding"/>
         <activity android:name=".Project_Beer_europe_Guinness"/>
         <activity android:name=".Project_Beer_start">
             <intent-filter>

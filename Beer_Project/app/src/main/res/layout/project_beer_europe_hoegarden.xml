@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/toptitle"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="240dp">
+
+        <ImageButton
+            android:id="@+id/prev"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_prev"/>
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="200dp"
+        android:layout_height="240dp"
+        >
+        <ImageView
+            android:id="@+id/img01"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/hoegaarden_bel"
+            />
+        <ImageView
+            android:id="@+id/img02"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/hoegaarden_bel2"
+            />
+        <ImageView
+            android:id="@+id/img03"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/hoegaarden_bel3"
+            />
+        <ImageView
+            android:id="@+id/img04"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/hoegaarden_bel4"
+            />
+
+    </ViewFlipper>
+        <ImageButton
+            android:id="@+id/next"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_next"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:text="좋음(2)"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:text="그닥(1)"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:text="별루(0)"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="90dp"
+            android:text="1. 맛"
+            android:textSize="25dp"
+            />
+
+        <CheckBox
+            android:id="@+id/onegood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp" />
+
+        <CheckBox
+            android:id="@+id/onenotbad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp" />
+
+        <CheckBox
+            android:id="@+id/onebad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="90dp"
+            android:text="2. 향"
+            android:textSize="25dp"/>
+
+        <CheckBox
+            android:id="@+id/twogood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp" />
+
+        <CheckBox
+            android:id="@+id/twonotbad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp" />
+
+        <CheckBox
+            android:id="@+id/twobad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="67dp"
+            android:text="3. 쓴맛"
+            android:textSize="25dp" />
+
+        <CheckBox
+            android:id="@+id/threegood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp" />
+
+        <CheckBox
+            android:id="@+id/threenotbad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp" />
+
+        <CheckBox
+            android:id="@+id/threebad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="68dp"
+            android:text="4. 거품"
+            android:textSize="25dp" />
+
+        <CheckBox
+            android:id="@+id/fourgood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp" />
+
+        <CheckBox
+            android:id="@+id/fournotbad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp" />
+
+        <CheckBox
+            android:id="@+id/fourbad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="68dp"
+            android:text="5. 넘김"
+            android:textSize="25dp" />
+
+        <CheckBox
+            android:id="@+id/fivegood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp" />
+
+        <CheckBox
+            android:id="@+id/fivenotbad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp" />
+
+        <CheckBox
+            android:id="@+id/fivebad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/done"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="설문완료"
+        android:onClick="score"
+        />
+</LinearLayout>
+</LinearLayout>
