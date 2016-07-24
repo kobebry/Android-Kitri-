@@ -12,15 +12,15 @@ import android.widget.TextView;
  */
 public class RatingBar03Exam01 extends Activity implements View.OnClickListener {
 
-    int btns[][] = {{R.id.onegood, R.id.onenotbad, R.id.onebad},
+
+    int su;
+    float sum;
+    RatingBar ratingBar;    int btns[][] = {{R.id.onegood, R.id.onenotbad, R.id.onebad},
             {R.id.twogood, R.id.twonotbad, R.id.twobad},
             {R.id.threegood, R.id.threenotbad, R.id.threebad},
             {R.id.fourgood, R.id.fournotbad, R.id.fourbad},
             {R.id.fivegood, R.id.fivenotbad, R.id.fivebad}};
     CheckBox chks[][] = new CheckBox[btns.length][btns[0].length];
-    int su;
-    float sum;
-    RatingBar ratingBar;
     TextView score;
 
     @Override

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
@@ -14,7 +16,12 @@ import android.widget.ViewFlipper;
  * Created by Administrator on 2016-07-15.
  */
 public class Project_Beer_europe_Wolfas extends Activity  implements View.OnClickListener{
-
+    int btns[][] = {{R.id.onegood, R.id.onenotbad, R.id.onebad},
+            {R.id.twogood, R.id.twonotbad, R.id.twobad},
+            {R.id.threegood, R.id.threenotbad, R.id.threebad},
+            {R.id.fourgood, R.id.fournotbad, R.id.fourbad},
+            {R.id.fivegood, R.id.fivenotbad, R.id.fivebad}};
+    CheckBox chks[][] = new CheckBox[btns.length][btns[0].length];
     ViewFlipper flipper;
     ImageButton next, prev;
     String gettitle;
@@ -23,6 +30,13 @@ public class Project_Beer_europe_Wolfas extends Activity  implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.project_beer_europe_wolfas);
+
+        for (int i = 0; i < btns.length; i++) {
+            for (int a = 0; a < btns[0].length; a++) {
+                chks[i][a] = (CheckBox) findViewById(btns[i][a]);
+                chks[i][a].setOnClickListener(this);
+            }
+        }
 
 
         next =(ImageButton)findViewById(R.id.next);
@@ -48,6 +62,19 @@ public class Project_Beer_europe_Wolfas extends Activity  implements View.OnClic
             flipper.showNext();//다음 View로 교체
         }else if(v.getId() == R.id.prev){
             flipper.showPrevious();
+        }
+        for (int i = 0; i < btns.length; i++) {
+            for (int a = 0; a < btns[0].length; a++) {
+                if (v.getId() == btns[i][a]) {
+                    for (int j = 0; j < 3; j++) {
+                        if (v.getId() == btns[i][j]) {
+
+                        } else {
+                            chks[i][j].setChecked(false);
+                        }
+                    }
+                }
+            }
         }
 
     }
