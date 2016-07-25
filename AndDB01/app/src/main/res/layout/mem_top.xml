@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnhome"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg03_color"
+            android:layout_margin="5dp"
+            android:text="홈으로"
+            android:textStyle="bold"
+            android:textColor="@color/txt03_color"/>
+
+        <Button
+            android:id="@+id/btnlog"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg03_color"
+            android:layout_margin="5dp"
+            android:text="로그인"
+            android:textStyle="bold"
+            android:textColor="@color/txt03_color"/>
+        <Button
+            android:id="@+id/btnins"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg03_color"
+            android:layout_margin="5dp"
+            android:text="가입"
+            android:textStyle="bold"
+            android:textColor="@color/txt03_color"/>
+
+        <Button
+            android:id="@+id/btnupdate"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg03_color"
+            android:layout_margin="5dp"
+            android:text="수정"
+            android:textStyle="bold"
+            android:textColor="@color/txt03_color"/>
+
+        <Button
+            android:id="@+id/btndel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg03_color"
+            android:layout_margin="5dp"
+            android:text="탈퇴"
+            android:textStyle="bold"
+            android:textColor="@color/txt03_color"/>
+
+        <Button
+            android:id="@+id/btnlist"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg03_color"
+            android:layout_margin="5dp"
+            android:text="목록"
+            android:textStyle="bold"
+            android:textColor="@color/txt03_color"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+    </LinearLayout>
+
+</LinearLayout>
