@@ -13,7 +13,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="50dp"
             android:text="**Update**"
             android:textSize="35dp"
             android:gravity="center|bottom"/>
@@ -34,7 +34,7 @@
                 android:textColor="#ffffff"/>
 
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg05_color"
                 android:textSize="30dp"
@@ -57,7 +57,7 @@
                 android:textColor="#ffffff"/>
 
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg05_color"
                 android:textSize="30dp"
@@ -80,7 +80,7 @@
                 android:textColor="#ffffff"/>
 
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg05_color"
                 android:textSize="30dp"
@@ -103,7 +103,7 @@
                 android:textColor="#ffffff"/>
 
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg05_color"
                 android:textSize="30dp"
@@ -126,7 +126,7 @@
                 android:textColor="#ffffff"/>
 
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg05_color"
                 android:textSize="30dp"
@@ -149,7 +149,7 @@
                 android:textColor="#ffffff"/>
 
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg05_color"
                 android:textSize="30dp"

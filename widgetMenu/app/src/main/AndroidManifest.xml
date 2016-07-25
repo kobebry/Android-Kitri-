@@ -9,29 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Project_Beer_start">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-
-        <activity android:name=".Project_Beer_asia">
-
-
-        </activity>
-        <activity android:name=".Project_Beer_europe">
-
-
-        </activity>
-        <activity android:name=".Project_Beer_america">
-
-
-        </activity>
-
-        <activity android:name=".NumberGameV01">
+            <activity android:name=".NumberGameV01">
 
 
         </activity>
@@ -224,28 +202,14 @@
         <activity android:name=".Lotto_version1">
 
         </activity>
-        <activity android:name=".MemLog">
-
-        </activity>
-        <activity android:name=".MemIns">
-
-        </activity>
-        <activity android:name=".MemDel">
-
-        </activity>
-
-        <activity android:name=".MemHom">
-
-        </activity>
-        <activity android:name=".MemBottom"></activity>
-        <activity android:name=".MemUpd">
-
-        </activity>
 
 
         <activity android:name=".MemTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity android:name=".WidgetActivity">
