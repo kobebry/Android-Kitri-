@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zmarket.myapp.product.ProductMapper">
+
+	<resultMap type="com.zmarket.myapp.product.Product" id="ProductResultMap">
+		<result property="num" column="NUM"/>
+		<result property="name" column="NAME"/>
+		<result property="category_num" column="CATEGORY_NUM"/>
+		<result property="seller_num" column="SELLER_NUM"/>
+		<result property="sell_date" column="SELL_DATE"/>
+		<result property="price" column="PRICE"/>
+		<result property="details" column="DETAILS"/>
+		<result	property="origin" column="ORIGIN"/>
+		<result property="made_date" column="MADE_DATE"/>
+		<result property="weight" column="WEIGHT"/>
+		<result property="option_indexes" column="OPTION_INDEXES"/>
+	</resultMap>
+	
+	<resultMap type="com.zmarket.myapp.product.Products" id="Products">
+		<result property="num" column="NUM"/>
+		<result property="name" column="NAME"/>
+		<result property="category_num" column="CATEGORY_NUM"/>
+		<result property="seller_num" column="SELLER_NUM"/>
+		<result property="seller_name" column="SELLER_NAME"/>
+		<result property="sell_date" column="SELL_DATE"/>
+		<result property="price" column="PRICE"/>
+		<result property="details" column="DETAILS"/>
+		<result	property="origin" column="ORIGIN"/>
+		<result property="made_date" column="MADE_DATE"/>
+		<result property="weight" column="WEIGHT"/>
+		<result property="option_indexes" column="OPTION_INDEXES"/>
+		<collection property="poList" ofType="com.zmarket.myapp.product.opt.ProductOpt">
+			<result property="num" column="po_num"/>
+			<result property="prod_num" column="prod_num"/>
+			<result property="options" column="options"/>
+			<result property="amount" column="amount"/>
+			<result property="additional_price" column="additional_price"/>
+		</collection>
+		<collection property="piList" ofType="com.zmarket.myapp.product.img.ProductImg">
+			<result property="num" column="pi_num"/>
+			<result property="prod_num" column="prod_num"/>
+			<result property="path" column="path"/>
+			<result property="name" column="pi_name"/>
+		</collection>
+	</resultMap>
+	
+	<select id="getSeqNum" resultType="int">
+		SELECT SEQ_PRODUCTS.NEXTVAL FROM DUAL
+	</select>
+	
+	<select id="select" resultMap="ProductResultMap" parameterType="int">
+		SELECT * FROM products WHERE num=#{num}
+	</select>
+	
+	<select id="selectAll" resultMap="ProductResultMap">
+		SELECT * FROM products
+	</select>
+	
+	<select id="selectBySeller" resultMap="ProductResultMap" parameterType="int">
+		SELECT * FROM products WHERE seller_num=#{seller_num} ORDER BY num DESC
+	</select>
+	
+	<select id="selectByCategory" resultMap="Products" parameterType="int">
+		SELECT p.num, p.name, p.category_num, p.seller_num, s.company as seller_name,
+			p.sell_date, p.price, p.details, p.origin, p.made_date, p.weight, 
+			po.num as po_num, po.options, po.amount, po.additional_price,
+			pi.num as pi_num, pi.path, pi.name as pi_name FROM products p 
+		INNER JOIN seller_details s ON p.seller_num = s.seller_num 
+		LEFT OUTER JOIN product_opts po ON p.num = po.prod_num 
+		LEFT OUTER JOIN product_imgs pi ON p.num = pi.prod_num 
+		WHERE p.category_num=#{category_num}
+	</select>
+	
+	<select id="selectByName" resultMap="Products" parameterType="String">
+		SELECT p.num, p.name, p.category_num, p.seller_num, s.company as seller_name,
+			p.sell_date, p.price, p.details, p.origin, p.made_date, p.weight, 
+			po.num as po_num, po.options, po.amount, po.additional_price,
+			pi.num as pi_num, pi.path, pi.name as pi_name, p.option_indexes FROM products p 
+		INNER JOIN seller_details s ON p.seller_num = s.seller_num 
+		LEFT OUTER JOIN product_opts po ON p.num = po.prod_num 
+		LEFT OUTER JOIN product_imgs pi ON p.num = pi.prod_num 
+		WHERE p.name like #{name}
+	</select>
+	
+	<select id="selectByDate" resultMap="Products">
+		<![CDATA[SELECT p.num, p.name, p.category_num, p.seller_num, s.company as seller_name,
+			p.sell_date, p.price, p.details, p.origin, p.made_date, p.weight, 
+			po.num as po_num, po.options, po.amount, po.additional_price,
+			pi.num as pi_num, pi.path, pi.name as pi_name
+			from (SELECT * from 
+				(SELECT rownum as rn, tmp1.* from
+					(SELECT * from products p order by sell_date desc) tmp1) tmp2 WHERE rn <= 5) p
+		INNER JOIN seller_details s ON p.seller_num = s.seller_num 
+		LEFT OUTER JOIN product_opts po ON p.num = po.prod_num 
+		LEFT OUTER JOIN product_imgs pi ON p.num = pi.prod_num order by p.sell_date desc]]>
+	</select>
+	
+	<select id="selectProducts" resultMap="Products" parameterType="int">
+		SELECT p.num, p.name, p.category_num, p.seller_num, s.company as seller_name,
+			p.sell_date, p.price, p.details, p.origin, p.made_date, p.weight, 
+			po.num as po_num, po.options, po.amount, po.additional_price,
+			pi.num as pi_num, pi.path, pi.name as pi_name, p.option_indexes FROM products p 
+		INNER JOIN seller_details s ON p.seller_num = s.seller_num 
+		LEFT OUTER JOIN product_opts po ON p.num = po.prod_num 
+		LEFT OUTER JOIN product_imgs pi ON p.num = pi.prod_num 
+		WHERE p.num = #{num}
+	</select>
+	
+	<insert id="insert" parameterType="com.zmarket.myapp.product.Product">
+		INSERT INTO products VALUES(#{num}, #{name}, #{category_num}, #{seller_num}, SYSDATE, #{price}, #{details}, #{origin}, #{made_date}, #{weight}, #{option_indexes})
+	</insert>
+	
+	<update id="update" parameterType="com.zmarket.myapp.product.Product">
+		UPDATE products SET name=#{name}, category_num=#{category_num}, seller_num=#{seller_num}, sell_date=SYSDATE, price=#{price}, details=#{details}, origin=#{origin}, made_date=#{made_date}, weight=#{weight}, options=#{option_indexes} WHERE num=#{num}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		DELETE FROM products WHERE num=#{num}
+	</delete>
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zmarket.myapp.board.BenchBoardMapper">
+
+	<resultMap type="com.zmarket.myapp.board.BenchBoard" id="BenchBoardResultMap">
+		<result property="num" column="NUM"/>
+		<result property="writer_num" column="WRITER_NUM"/>
+		<result property="title" column="TITLE"/>
+		<result property="content" column="CONTENT"/>
+		<result property="prod_num" column="PROD_NUM"/>
+		<result property="img_path" column="IMG_PATH"/>
+	</resultMap>
+	
+	<select id="select" resultMap="BenchBoardResultMap" parameterType="int">
+		SELECT * FROM bench_boards WHERE num=#{num} 
+	</select>
+	
+	<select id="selectAll" resultMap="BenchBoardResultMap">
+		SELECT * FROM bench_boards order by num desc 
+	</select>
+
+	<select id="selectByProdNum" resultMap="BenchBoardResultMap" parameterType="int">
+		SELECT * FROM bench_boards WHERE prod_num=#{prod_num} order by num desc
+	</select> 
+	
+	<insert id="insert" parameterType="com.zmarket.myapp.board.BenchBoard">
+		INSERT INTO bench_boards VALUES(SEQ_BENCH_BOARDS.NEXTVAL, ${writer_num}, #{title}, #{content}, #{prod_num}, #{img_path})
+	</insert>
+	
+	<insert id="update" parameterType="com.zmarket.myapp.board.BenchBoard">
+		UPDATE bench_boards SET title=#{title}, content=#{content}, img_path=#{img_path} WHERE num=#{num}
+	</insert>
+	
+	<delete id="delect" parameterType="int">
+		DELETE FROM bench_boards WHERE num=#{num}
+	</delete>
+
+</mapper>

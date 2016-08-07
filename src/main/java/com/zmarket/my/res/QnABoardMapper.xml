@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zmarket.myapp.board.QnABoardMapper">
+	<resultMap type="com.zmarket.myapp.board.QnABoard" id="QnABoardResultMap">
+		<result property="num" column="NUM"/>
+		<result property="writer_num" column="WRITER_NUM"/>
+		<result property="title" column="TITLE"/>
+		<result property="content" column="CONTENT"/>
+		<result property="parent_num" column="PARENT_NUM"/>
+		
+	</resultMap>
+
+	<select id="select" resultMap="QnABoardResultMap" parameterType="int">
+		SELECT * FROM QNA_BOARDS WHERE num=#{num}
+	</select>
+	
+	<select id="selectAll" resultMap="QnABoardResultMap">
+		SELECT * FROM QNA_BOARDS where parent_num is null order by num desc
+	</select>
+	
+	<insert id="insert" parameterType="com.zmarket.myapp.board.QnABoard">
+		INSERT INTO QNA_BOARDS VALUES(SEQ_QNA_BOARDS.NEXTVAL, #{writer_num}, #{title}, #{content}, null)
+	</insert>
+	
+	<insert id="update" parameterType="com.zmarket.myapp.board.QnABoard">
+		UPDATE QNA_BOARDS SET title=#{title}, content=#{content}, WHERE num=#{num}
+	</insert>
+	
+	<delete id="delect" parameterType="int">
+		DELETE FROM QNA_BOARDS WHERE num=#{num}
+	</delete>
+	
+	<insert id="insert_rep" parameterType="com.zmarket.myapp.board.QnABoard">
+		INSERT INTO QNA_BOARDS(PARENT_NUM, TITLE, CONTENT, WRITER_NUM, NUM) VALUES(#{num}, #{title}, #{content}, #{writer_num}, SEQ_QNA_BOARDS.NEXTVAL)
+	</insert>
+	
+	<select id="select_rep" resultMap="QnABoardResultMap" parameterType="int">
+		SELECT * FROM QNA_BOARDS WHERE parent_num=#{num}
+	</select>
+	
+	<select id="get_rep" resultMap="QnABoardResultMap" parameterType="int">
+		SELECT * FROM QNA_BOARDS WHERE parent_num=#{num}
+	</select>
+</mapper>

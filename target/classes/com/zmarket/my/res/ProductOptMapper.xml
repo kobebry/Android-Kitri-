@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zmarket.myapp.product.opt.ProductOptMapper">
+
+	<resultMap type="com.zmarket.myapp.product.opt.ProductOpt" id="ProductOptResultMap">
+		<result property="num" column="NUM"/>
+		<result property="prod_num" column="PROD_NUM"/>
+		<result property="options" column="OPTIONS"/>
+		<result property="amount" column="AMOUNT"/>
+		<result property="additional_price" column="ADDITIONAL_PRICE"/>
+	</resultMap>
+	
+	<select id="select" resultMap="ProductOptResultMap" parameterType="int">
+		SELECT * FROM product_opts WHERE num=#{num}
+	</select>
+	
+	<select id="selectAll" resultMap="ProductOptResultMap" parameterType="int">
+		SELECT * FROM product_opts WHERE prod_num=#{prod_num}
+	</select>
+	
+	<insert id="insert" parameterType="com.zmarket.myapp.product.opt.ProductOpt">
+		INSERT INTO product_opts VALUES(SEQ_PRODUCT_OPTS.NEXTVAL, #{prod_num}, #{options}, #{amount}, #{additional_price})
+	</insert>
+	
+	<update id="update" parameterType="com.zmarket.myapp.product.opt.ProductOpt">
+		UPDATE product_opts SET prod_num=#{prod_num}, options=#{options}, amount=#{amount}, addtional_price=#{additional_price} WHERE num=#{num}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM product_opts WHERE num=#{num}
+	</delete>
+	
+	<select id="selectByProdNumAndOption" parameterType="com.zmarket.myapp.product.opt.ProductOpt" resultMap="ProductOptResultMap">
+		SELECT * FROM product_opts WHERE prod_num=#{prod_num} AND options=#{options} 
+	</select>
+	
+	<update id="updateAmountForDecrease" parameterType="HashMap">
+		UPDATE product_opts SET amount=amount-#{amount} WHERE num=#{num} 
+	</update>
+</mapper>

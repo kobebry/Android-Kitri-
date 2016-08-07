@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zmarket.myapp.category.CategoryMapper">
+
+	<resultMap type="com.zmarket.myapp.category.Category" id="CategoryResultMap">
+		<result property="num" column="NUM"/>
+		<result property="name" column="NAME"/>
+		<result property="parent_category_num" column="PARENT_CATEGORY_NUM"/>
+	</resultMap>
+	
+	<select id="select" resultMap="CategoryResultMap" parameterType="int">
+		SELECT * FROM categories WHERE num=#{num}
+	</select>
+	
+	<select id="selectAll" resultMap="CategoryResultMap">
+		SELECT * FROM categories
+	</select>
+	
+	<select id="selectByParent" resultMap="CategoryResultMap">
+		SELECT * FROM categories WHERE parent_category_num=#{parentNum}
+	</select>
+	
+	<insert id="insert" parameterType="com.zmarket.myapp.category.Category">
+		INSERT INTO categories VALUES(SEQ_CATEGORIES.NEXTVAL, ${name}, #{parent_category_num})
+	</insert>
+	
+	<insert id="update" parameterType="com.zmarket.myapp.category.Category">
+		UPDATE categories SET name=#{name}, parent_category_num=#{parent_category_num} WHERE num=#{num}
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM categories WHERE num=#{num}
+	</delete>
+</mapper>

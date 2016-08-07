@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zmarket.myapp.order.OrderMapper">
+
+	<resultMap type="com.zmarket.myapp.order.Order" 
+	id="OrderResultMap">
+		<result property="num" column="num"/>
+		<result property="customer_num" column="customer_num"/>
+		<result property="prod_num" column="prod_num"/>
+		<result property="prod_opt_num" column="prod_opt_num"/>
+		<result property="amount" column="amount"/>
+		<result property="status" column="status"/>
+		<result property="order_date" column="order_date"/>
+		<result property="address" column="ADDRESS"/>
+		<result property="phone" column="PHONE"/>
+	</resultMap>
+	
+	<resultMap type="com.zmarket.myapp.order.Basket" 
+	id="BasketResultMap">
+		<result property="num" column="num"/>
+		<result property="prod_num" column="prod_num"/>
+		<result property="customer_num" column="customer_num"/>
+		<result property="prod_opt_num" column="prod_opt_num"/>
+		<result property="amount" column="amount"/>
+	</resultMap>
+	
+	 <resultMap type="com.zmarket.myapp.product.Product" id="ProductResultMap2">
+		<result property="num" column="P_NUM"/>
+		<result property="name" column="NAME"/>
+		<result property="price" column="PRICE"/>
+		<result property="details" column="DETAILS"/>
+	</resultMap>
+
+	<resultMap type="com.zmarket.myapp.product.opt.ProductOpt" id="ProductOptResultMap2">
+		<result property="num" column="PO_NUM"/>
+		<result property="prod_num" column="PROD_NUM"/>
+		<result property="options" column="OPTIONS"/>
+		<result property="amount" column="AMOUNT"/>
+		<result property="addtional_price" column="ADDITIONAL_PRICE"/>
+	</resultMap>
+	
+	<resultMap type="com.zmarket.myapp.order.Baskets" 
+	id="BasketsResultMap">
+		<result property="num" column="num"/>
+		<result property="name" column="name"/>
+		<result property="price" column="price"/>	
+		<result property="customer_num" column="customer_num"/>	
+		<result property="options" column="options"/>
+		<result property="amount" column="amount"/>
+		<result property="add_price" column="add_price"/>
+	</resultMap>
+	
+	<resultMap type="com.zmarket.myapp.order.Orders" 
+	id="Orders">
+		<result property="num" column="num"/>
+		<result property="customer_num" column="customer_num"/>
+		<result property="prod_num" column="prod_num"/>
+		<result property="prod_opt_num" column="prod_opt_num"/>
+		<result property="amount" column="amount"/>
+		<result property="status" column="status"/>
+		<result property="order_date" column="order_date"/>
+		<result property="address" column="ADDRESS"/>
+		<result property="phone" column="PHONE"/>
+		<result property="prod_name" column="name"/>
+		<result property="opt_name" column="options"/>
+		<result property="price" column="price"/>
+		<result property="additional_price" column="additional_price"/>
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.zmarket.myapp.order.Order">
+		INSERT INTO orders(num,customer_num,prod_num,prod_opt_num,amount,status,order_date,address,phone)  
+		VALUES(seq_orders.nextval,#{customer_num},#{prod_num},#{prod_opt_num},#{amount},1,sysdate,#{address},#{phone})
+	</insert>
+	
+	<insert id="insert_basket" parameterType="com.zmarket.myapp.order.Basket">
+		INSERT INTO shopping_baskets(num,prod_num,customer_num,prod_opt_num,amount)  
+		VALUES(seq_baskets.nextval,#{prod_num},#{customer_num},#{prod_opt_num},#{amount})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM orders WHERE num=#{num}
+	</delete>
+	
+	<update id="update" parameterType="com.zmarket.myapp.order.Order">
+		UPDATE orders SET amount=#{amount}, status=#{status}, address=#{address}, phone=#{phone}
+		WHERE num=#{num}
+	</update>
+	
+	<select id="findlistbycustomer" resultMap="Orders"
+	parameterType="int">
+		SELECT * FROM orders o 
+		INNER JOIN products p ON o.PROD_NUM = p.NUM 
+		INNER JOIN product_opts po ON o.PROD_OPT_NUM = po.NUM 
+		WHERE o.CUSTOMER_NUM=#{customer_num} AND (status BETWEEN 1 AND 4)
+	</select>
+	
+	<select id="findorderlist" resultMap="Orders"
+	parameterType="int">
+		SELECT * FROM orders o 
+		INNER JOIN products p ON o.PROD_NUM = p.NUM 
+		INNER JOIN product_opts po ON o.PROD_OPT_NUM = po.NUM 
+		WHERE o.CUSTOMER_NUM=#{customer_num} AND status > 4
+	</select>
+	
+	<select id="findbasketbycustomer" resultType="com.zmarket.myapp.order.Basket"
+	parameterType="int">
+		SELECT * FROM shopping_baskets WHERE customer_num=#{customer_num}
+	</select>
+	
+	<select id="findbasketsbycustomer" resultMap="BasketsResultMap"
+	parameterType="int">
+		SELECT b.num, p.name, p.price, b.customer_num, po.options, po.amount, po.additional_price as add_price
+		FROM shopping_baskets b
+		INNER JOIN products p ON b.prod_num = p.num 
+		INNER JOIN product_opts po ON b.prod_opt_num = po.num 
+		WHERE b.customer_num=#{customer_num}
+	</select>
+	
+	<select id="selectBasket" resultMap="BasketResultMap" parameterType="int">
+		SELECT * FROM shopping_baskets WHERE num=#{num}
+	</select>
+	
+</mapper>
