@@ -2,8 +2,8 @@ package com.example.choi.beer_project;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -13,14 +13,17 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,11 +50,6 @@ public class Project_Beer_europe_Guinness extends Activity implements View.OnCli
     ImageButton next, prev;
     String gettitle, title;
     TextView toptitle;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client2;
 
 
     @Override
@@ -88,19 +86,26 @@ public class Project_Beer_europe_Guinness extends Activity implements View.OnCli
         flipper.setInAnimation(showIn);
         flipper.setOutAnimation(this, android.R.anim.slide_out_right);
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client2 = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        builder = new AlertDialog.Builder(this);
+        builder.setTitle("평점이 등록되었습니다.");
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getApplicationContext(),Project_Beer_europe.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void onClick(View v) {
+        sum = 0;
         if (v.getId() == R.id.next) {
             flipper.showNext();//다음 View로 교체
         } else if (v.getId() == R.id.prev) {
             flipper.showPrevious();
         } else if (v.getId() == R.id.done) {
-            builder.setMessage("평점이 등록되었습니다.");
-            builder.setPositiveButton("확인", null);
+
+            builder.show();
             for (int i = 0; i < btns.length; i++) {
                 for (int a = 0; a < btns[0].length; a++) {
                     if (chks[i][a].isChecked()) {
@@ -117,39 +122,41 @@ public class Project_Beer_europe_Guinness extends Activity implements View.OnCli
 
             }
             title = toptitle.getText().toString();
+
             category = "addscore";
             String requestURL = "http://192.168.15.21:8805/WebServer/andController.do";
-
             HttpClient client = new DefaultHttpClient();
             HttpPost post = new HttpPost(requestURL);
             List<NameValuePair> paramList = new ArrayList<>();
             paramList.add(new BasicNameValuePair("title", title));
-            paramList.add(new BasicNameValuePair("score", sum));
+            paramList.add(new BasicNameValuePair("score", String.valueOf(sum)));
             paramList.add(new BasicNameValuePair("category"  , category));
-
             try {
                 post.setEntity(new UrlEncodedFormEntity(paramList, "UTF-8"));
                 HttpResponse response = client.execute(post);
                 Toast.makeText(getApplicationContext(), "mem DB  저장 확인 ",
                         Toast.LENGTH_SHORT).show();
+
             } catch(Exception e) {
                 Log.d("sendPost===> ", e.toString());
             }
+
         }
 
-        for (int i = 0; i < btns.length; i++) {
-            for (int a = 0; a < btns[0].length; a++) {
-                if (v.getId() == btns[i][a]) {
-                    for (int j = 0; j < 3; j++) {
-                        if (v.getId() == btns[i][j]) {
+            for (int i = 0; i < btns.length; i++) {
+                for (int a = 0; a < btns[0].length; a++) {
+                    if (v.getId() == btns[i][a]) {
+                        for (int j = 0; j < 3; j++) {
+                            if (v.getId() == btns[i][j]) {
 
-                        } else {
-                            chks[i][j].setChecked(false);
+                            } else {
+                                chks[i][j].setChecked(false);
+                            }
                         }
                     }
                 }
             }
-        }
 
+        }
     }
-}
+

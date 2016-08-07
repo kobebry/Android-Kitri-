@@ -13,7 +13,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="50dp"
             android:text="**Insert**"
             android:textSize="35dp"
             android:gravity="center|bottom"/>
@@ -35,7 +35,7 @@
 
             <EditText
                 android:id="@+id/editName"
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:textColor="#89d1ce"
                 android:background="#ffffff"
@@ -61,7 +61,7 @@
 
             <EditText
                 android:id="@+id/editId"
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:textColor="#89d1ce"
                 android:background="#ffffff"
@@ -87,7 +87,7 @@
 
             <EditText
                 android:id="@+id/editPwd"
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:textColor="#89d1ce"
                 android:background="#ffffff"
@@ -113,7 +113,7 @@
 
             <EditText
                 android:id="@+id/editEmail"
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:textColor="#89d1ce"
                 android:background="#ffffff"
@@ -139,7 +139,7 @@
 
             <EditText
                 android:id="@+id/editPhone"
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:textSize="30dp"
                 android:textColor="#89d1ce"
@@ -165,7 +165,7 @@
 
             <EditText
                 android:id="@+id/editAddr"
-                android:layout_width="match_parent"
+                android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:textColor="#89d1ce"
                 android:background="#ffffff"
@@ -186,17 +186,17 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="JOIN"
+                android:layout_margin="5dp"
                 android:textColor="#ffffff"
-                android:background="#89d1ce"
-                android:layout_margin="5dp"/>
+                android:background="#89d1ce" />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
                 android:text="CANCEL"
-                android:textColor="#ffffff"
-                android:background="#89d1ce"/>
+                android:background="#89d1ce"
+                android:textColor="#ffffff"/>
         </LinearLayout>
 
 

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MemIns">
+        <activity android:name=".CustomListviewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +20,8 @@
 
         </activity>
 
+        <activity android:name=".MemTop">
+            </activity>
         <activity android:name=".MainActivity">
             </activity>
     </application>
